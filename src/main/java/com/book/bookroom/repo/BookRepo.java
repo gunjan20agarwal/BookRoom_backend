@@ -11,5 +11,11 @@ import com.book.bookroom.model.*;
 @Repository("bookRepository")
 public interface BookRepo extends JpaRepository<Book, Integer>{
 
-		public List<Book> findBySubCategoryId(int id);
+		public List<Book> findBySubCategoryIdId(int id);
+		
+		public List<Book> findByCategoryIdId(int id);
+		
+		
+		
+		//public List<Book> findBySubCategoryIdcategoryIdId(int id);
 }

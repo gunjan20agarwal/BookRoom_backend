@@ -14,7 +14,7 @@ public class SubCategory {
 	private int id;
 	
 	@ManyToOne
-	private Category category_id;
+	private Category categoryId;
 	
 	private String subCategory_name;
 	
@@ -22,7 +22,7 @@ public class SubCategory {
 
 	
 	public SubCategory(Category category_id, String subCategory_name) {
-		this.category_id = category_id;
+		this.categoryId = category_id;
 		this.subCategory_name = subCategory_name;
 	}
 
@@ -44,11 +44,11 @@ public class SubCategory {
 	}
 	
 	public Category getCategory_id() {
-		return category_id;
+		return categoryId;
 	}
 
 	public void setCategory_id(Category category_id) {
-		this.category_id = category_id;
+		this.categoryId = category_id;
 	}
 
 	@Override

@@ -29,7 +29,11 @@ public class BookService {
     }
     
     public List<Book> getBySubCategory(int id) {
-        return repo.findBySubCategoryId(id);
+        return repo.findBySubCategoryIdId(id);
+    }
+    
+    public List<Book> getByCategory(int id) {
+        return repo.findByCategoryIdId(id);
     }
     
     public void delete(int id) {

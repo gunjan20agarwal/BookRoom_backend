@@ -73,6 +73,18 @@ public class BookController {
                 return new ResponseEntity<List<Book>>(HttpStatus.NOT_FOUND);
             }    
         
-    }    
+    }
+        
+        @GetMapping("category/{category_id}/books")
+    	public ResponseEntity<List<Book>> getBookByCategory(@PathVariable("category_id") String id) {
+            try {
+                List<Book> book = service.getByCategory(Integer.parseInt(id));
+                
+                return new ResponseEntity<List<Book>>(book, HttpStatus.OK);
+            } catch (NoSuchElementException e) {
+                return new ResponseEntity<List<Book>>(HttpStatus.NOT_FOUND);
+            }    
+        
+    }        
 	
 }

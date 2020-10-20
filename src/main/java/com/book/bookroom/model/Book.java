@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -14,8 +15,12 @@ public class Book {
 	private String book_title;
 	
 	@ManyToOne
+	@JoinColumn(name="subCategoryIdentifier")
 	private SubCategory subCategoryId;
 	
+	@ManyToOne
+	private Category categoryId;
+
 	@ManyToOne
 	private Publisher publishing_house_id;
 	
@@ -44,11 +49,19 @@ public class Book {
 		this.book_title = book_title;
 	}
 	
-	public int getSubCategoryId() {
-		return subCategoryId.getId();
+	public Category getCategoryId() {
+		return categoryId;
 	}
 
-	public void setSubCategory_id(SubCategory subCategory_id) {
+	public SubCategory getSubCategoryId() {
+		return subCategoryId;
+	}
+	
+	public void setCategoryId(Category categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public void setSubCategoryId(SubCategory subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
 
